@@ -1,0 +1,26 @@
+body {
+  background-color: #f0e1d0;
+  width: 300px;
+}
+
+#original {
+  color: #959b71;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#definition {
+  color: #b97375;
+  font-size: 20px;
+}
+
+#speech {
+  color: #729ea1;
+  font-style: italic;
+  font-size: 18px;
+}
+
+#form {
+  text-align: center;
+  border: none;
+}
