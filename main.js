@@ -7,7 +7,7 @@ const btn = document.getElementById("myCheck");
 function myFunction() {
   event.preventDefault(translateTarget);
   translateTarget = window.getSelection().toString();
-  console.log(translateTarget);
+  // console.log(translateTarget);
   fetch(
     `https://www.dictionaryapi.com/api/v3/references/spanish/json/${translateTarget}?key=51a3d131-7eb1-4a9a-926b-29d55b25e4c1`
   )
