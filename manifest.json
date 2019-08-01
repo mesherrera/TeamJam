@@ -12,5 +12,6 @@
     "default_title": "Translate",
     "default_popup": "popup.html"
   },
-  "permissions": ["storage", "activeTab"]
+  "permissions": ["storage", "activeTab", "tabs"],
+  // "background": { "scripts": [ "background.js" ] }
 }
