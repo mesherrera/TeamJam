@@ -34,17 +34,21 @@ if (btn) {
 
 // Create divs for the pop up
 function realCreateDictionaryRef() {
+
   let count = 0;
+
   function callback() {
     if(count > 0) {
       const outputPOS = document.createElement("div");
       const outputDef = document.createElement("div");
+      const outputOriginal = document.createElement("div");
 
       //Assigns inner text to each created div
       outputDef.innerText = word;
       outputPOS.innerText = partOfSpeech;
 
       // Add to pop up
+      document.querySelector("#dictionary").appendChild(outputOriginal);
       document.querySelector("#dictionary").appendChild(outputDef);
       document.querySelector("#dictionary").appendChild(outputPOS);
     }
