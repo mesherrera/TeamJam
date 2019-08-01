@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "OnClick Translator",
+  "name": "JAMmin' Translation",
   "version": "1.0",
   "content_scripts": [
     {
@@ -8,9 +8,20 @@
       "js": ["content.js"]
     }
   ],
+  "icons": {
+    "16": "logo-16.png",
+    "32": "logo-32.png",
+    "128": "logo-128.png"
+  },
   "browser_action": {
     "default_title": "Translate",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logo-16.png",
+      "32": "logo-32.png",
+      "128": "logo-128.png"
+    }
   },
-  "permissions": ["storage", "activeTab"]
+  "permissions": ["storage", "activeTab"],
+  "background": ["background.js"]
 }
