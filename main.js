@@ -8,12 +8,15 @@ const btn = document.getElementById("myCheck");
 // On mouse-over, execute myFunction
 function myFunction() {
   event.preventDefault(translateTarget);
-  chrome.tabs.executeScript( {
-    code: "window.getSelection().toString();"
-  }, function(selection) {
-    translateTarget = selection;
-    // alert(selection[0]);
-  });
+  chrome.tabs.executeScript(
+    {
+      code: "window.getSelection().toString();"
+    },
+    function(selection) {
+      translateTarget = selection;
+      // alert(selection[0]);
+    }
+  );
   fetch(
     `https://www.dictionaryapi.com/api/v3/references/spanish/json/${translateTarget}?key=51a3d131-7eb1-4a9a-926b-29d55b25e4c1`
   )
@@ -40,12 +43,12 @@ if (btn) {
 
 // Create divs for the pop up
 function realCreateDictionaryRef() {
-
   let count = 0;
 
   function callback() {
-    if(count > 0) {
-      //create Divs for fetch items
+
+    if (count === 1) {
+
       const outputPOS = document.createElement("div");
       const outputDef = document.createElement("div");
       const outputOriginal = document.createElement("div");
@@ -74,9 +77,9 @@ function realCreateDictionaryRef() {
       
       
       // Add to pop up
-      document.querySelector("#dictionary").appendChild(outputOriginal);
-      document.querySelector("#dictionary").appendChild(outputDef);
-      document.querySelector("#dictionary").appendChild(outputPOS);
+      document.querySelector("#original").appendChild(outputOriginal);
+      document.querySelector("#definition").appendChild(outputDef);
+      document.querySelector("#speech").appendChild(outputPOS);
       //add Buttons to pop up
       document.querySelector("#dictionary").appendChild(wikiBtn);
       document.querySelector("#dictionary").appendChild(googleBtn);
@@ -84,7 +87,7 @@ function realCreateDictionaryRef() {
       document.querySelector('#wikiBtn').appendChild(wikipLink);
       document.querySelector('#googBtn').appendChild(googleLink);
 
-      
+
     }
     count++;
   }
@@ -92,4 +95,3 @@ function realCreateDictionaryRef() {
 }
 
 const createDictionaryRef = realCreateDictionaryRef();
-
