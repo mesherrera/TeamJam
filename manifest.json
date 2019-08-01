@@ -22,6 +22,7 @@
       "128": "logo-128.png"
     }
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "tabs"],
   "background": ["background.js"]
+
 }
