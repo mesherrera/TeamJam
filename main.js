@@ -46,6 +46,7 @@ function realCreateDictionaryRef() {
       //Assigns inner text to each created div
       outputDef.innerText = word;
       outputPOS.innerText = partOfSpeech;
+      outputOriginal.innerText = translateTarget;
 
       // Add to pop up
       document.querySelector("#dictionary").appendChild(outputOriginal);
