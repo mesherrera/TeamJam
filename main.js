@@ -26,14 +26,12 @@ function myFunction() {
       word = data[0].shortdef;
       partOfSpeech = data[0].fl;
       wikiLink = `https://es.wikipedia.org/wiki/${word}`;
-      googleTransLink = `https://translate.google.com/#view=home&op=translate&sl=en&tl=es&text=${translateTarget}`
+      googleTransLink = `https://translate.google.com/#view=home&op=translate&sl=en&tl=es&text=${translateTarget}`;
       createDictionaryRef();
       // console.log("word", word, "pOS", partOfSpeech);
       // document.body.style.backgroundColor = "red"; //DEBUG, Remove Me Later
     })
     .catch(() => console.log("error"));
-
-
 }
 
 if (btn) {
@@ -46,9 +44,7 @@ function realCreateDictionaryRef() {
   let count = 0;
 
   function callback() {
-
     if (count === 1) {
-
       const outputPOS = document.createElement("div");
       const outputDef = document.createElement("div");
       const outputOriginal = document.createElement("div");
@@ -57,25 +53,24 @@ function realCreateDictionaryRef() {
       const googleBtn = document.createElement("button");
       const wikipLink = document.createElement("a");
       const googleLink = document.createElement("a");
-      
+
       // event.preventDefault(wikiBtn);
       // event.preventDefault(googleBtn);
-      
+
       //Assigns inner text to each created div
       outputDef.innerText = word;
       outputPOS.innerText = partOfSpeech;
       outputOriginal.innerText = translateTarget;
-      
+
       //give those buttons Ids
-      wikiBtn.setAttribute('id','wikiBtn');
-      googleBtn.setAttribute('id','googBtn');
+      wikiBtn.setAttribute("id", "wikiBtn");
+      googleBtn.setAttribute("id", "googBtn");
       //add links to a tags
-      wikipLink.setAttribute('href',wikiLink);
-      googleLink.setAttribute('href',googleTransLink)
-      wikipLink.innerHTML = 'Wikipedia';
-      googleLink.innerHTML = 'Google Translate'
-      
-      
+      wikipLink.setAttribute("href", wikiLink);
+      googleLink.setAttribute("href", googleTransLink);
+      wikipLink.innerText = "Wikipedia";
+      googleLink.innerText = "Google Translate";
+
       // Add to pop up
       document.querySelector("#original").appendChild(outputOriginal);
       document.querySelector("#definition").appendChild(outputDef);
@@ -84,10 +79,16 @@ function realCreateDictionaryRef() {
       document.querySelector("#dictionary").appendChild(wikiBtn);
       document.querySelector("#dictionary").appendChild(googleBtn);
       //Add links to goog and wiki buttons
-      document.querySelector('#wikiBtn').appendChild(wikipLink);
-      document.querySelector('#googBtn').appendChild(googleLink);
+      document.querySelector("#wikiBtn").appendChild(wikipLink);
+      document.querySelector("#googBtn").appendChild(googleLink);
 
-
+      //Adds functionality to Wiki and Translate buttons
+      document.querySelector("#wikiBtn").addEventListener("click", function() {
+        window.open(wikiLink);
+      });
+      document.querySelector("#googBtn").addEventListener("click", function() {
+        window.open(googleTransLink);
+      });
     }
     count++;
   }

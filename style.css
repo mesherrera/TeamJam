@@ -3,7 +3,14 @@ body {
   width: 300px;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 #original {
+  margin-top: 20px;
+  margin-left: 10px;
   color: #959b71;
   font-weight: bold;
   font-size: 24px;
@@ -12,15 +19,43 @@ body {
 #definition {
   color: #b97375;
   font-size: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #speech {
   color: #729ea1;
   font-style: italic;
   font-size: 18px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #form {
   text-align: center;
+}
+
+#myCheck {
+  outline: none;
+}
+
+#googBtn {
+  text-align: center;
+  padding: 5px;
+  background-color: #729ea1;
   border: none;
+  font-size: 18px;
+  text-emphasis: bold;
+}
+
+#wikiBtn {
+  text-align: center;
+  padding: 5px;
+  background-color: #729ea1;
+  border: none;
+  margin-top: 30px;
+  margin-right: 25px;
+  margin-left: 20px;
+  font-size: 18px;
+  text-emphasis: bold;
 }
