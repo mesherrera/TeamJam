@@ -4,18 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" />
+    <link rel="stylesheet" href="style.css" />
     <title>Translate</title>
   </head>
 
   <body>
-    <h1>JAMmin' Translator</h1>
-    <img src="jam.png" height="150" width="150">
-    <div id="dictionary"></div>
-    <form>
-      <input type="submit" id="myCheck" ; />
-    </form>
+    <!-- <h1 style="color: #CEB1BE; text-align: center">
+      JAMmin' Translation
+    </h1> -->
+    <!-- <img src="jam.png" height="150" width="150"> -->
+    <div id="dictionary">
+      <div id="original"></div>
+      <div id="speech"></div>
+      <div id="definition"></div>
+    </div>
+    <div id="form">
+      <form>
+        <input
+          type="image"
+          src="logo.png"
+          alt="submit"
+          height="150"
+          width="150"
+          id="myCheck"
+        />
+      </form>
+    </div>
     <script src="main.js">
-      translateTarget = window.getSelection().toString();
+      translateTarget = window.getSelection().toString().t;
     </script>
   </body>
 </html>
