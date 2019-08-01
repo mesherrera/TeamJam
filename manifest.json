@@ -12,5 +12,5 @@
     "default_title": "Translate",
     "default_popup": "popup.html"
   },
-  "permissions": ["storage"]
+  "permissions": ["storage", "activeTab"]
 }
